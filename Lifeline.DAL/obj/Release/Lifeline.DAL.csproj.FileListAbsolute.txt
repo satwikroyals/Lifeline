@@ -1,0 +1,22 @@
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Lifeline.DAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Lifeline.DAL.pdb
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Dapper.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\DbFactory.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\MySql.Data.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Newtonsoft.Json.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\bin\Release\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.csprojResolveAssemblyReference.cache
+D:\Kansolve projects\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.pdb
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Lifeline.DAL.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Lifeline.DAL.pdb
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Dapper.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\DbFactory.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\MySql.Data.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Newtonsoft.Json.dll
+D:\Charles\Lifeline\Lifeline.DAL\bin\Release\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.csprojResolveAssemblyReference.cache
+D:\Charles\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.dll
+D:\Charles\Lifeline\Lifeline.DAL\obj\Release\Lifeline.DAL.pdb

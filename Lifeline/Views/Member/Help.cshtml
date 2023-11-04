@@ -1,0 +1,164 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model Lifeline.Entity.HelpSeekingMemberProfile
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lifeline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="~/customercontent/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/customercontent/css/styles.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="~/customercontent/stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script>
+    (function () {
+        var isiOS = (navigator.userAgent.match('iPad') || navigator.userAgent.match('iPhone') || navigator.userAgent.match('iPod')) ? true : false,
+            isAndroid = (navigator.userAgent.match('Android')) ? true : false;
+        // Mobile
+        if (isiOS || isAndroid) {
+            if (isiOS) {
+                fallbackLink = '@ViewBag.IphoneAppUrl';
+                window.location.href ='lifeline://Help?id=@ViewBag.Id' ;
+            }
+            else {
+                fallbackLink = '@ViewBag.AndroidAppUrl';
+                window.location.href = 'lifeline://Help?id=@ViewBag.Id';
+            }
+            window.setTimeout(function () { window.location.href = fallbackLink; }, 100);
+        }
+    })();
+
+    </script>
+
+</head>
+<body>
+
+
+
+
+    <div class="main-row">
+        <div class="">
+            <div class="">
+                <div class="frame-border">
+                    <nav class="navbar navbar-light b-color">
+                        <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-align-justify"></span>
+                        </button>
+
+                        <button class="invisible px-3"></button>
+
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item active">
+                                    <a class="nav-link text-light" href="#"><span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="#"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                    <div class="container-fluid p-0 content-h boxscroll do-nicescrol4 life-line-wp">
+                        <div class="wrap">
+
+
+
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="finger-lightly-wrapper">
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="welcome-image-wrapper inside-right">
+                                            <img src="~/customercontent/images/Final-Logo.png" class="welcome-wrapper">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-12 col-xs-12">
+                                        <div class="welcome-header inside-left">
+                                            <h6 class="panel-wrapper1">SOS</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="finger-lightly-wrapper">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="welcome-header inside-left navb">
+                                            <h6 class="panel-wrapper2">@Model.FirstName @Model.LastName</h6>
+                                            <h6 class="panel-wrapper3">@Model.Location</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="finger-lightly-wrapper">
+                                    <div class="col-md-2 col-sm-12 col-xs-12"></div>
+                                    <div class="col-md-8 col-sm-12 col-xs-12">
+                                        <div class="welcome-image-wrapper inside-right navb1">
+                                            <img src="@Model.CustomerImagePath" class="life-line-welcome-wrapper">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12 col-xs-12"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="finger-lightly-wrapper">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="welcome-header inside-left navb2">
+                                            <h6 class="panel-wrapper2">@Model.GeoAddress</h6>
+                                            <h6 class="panel-wrapper3">@Model.Location</h6>
+                                            @*<h6 class="panel-wrapper3">HYD</h6>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="finger-lightly-wrapper">
+                                    <div class="col-md-1 col-sm-12 col-xs-12"></div>
+                                    <div class="col-md-10 col-sm-12 col-xs-12">
+                                        <div class="welcome-image-wrapper navb3">
+                                            <iframe width="300" height="100" style="border:0;" allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=@Model.Latitude,@Model.Longitude&hl=es&z=14&amp;output=embed"></iframe>
+                                            @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30463.115434236628!2d78.50887286279382!3d17.369052787716427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98e8b4b2913b%3A0x49366cfa18225a9e!2sDilsukhnagar%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1614335253176!5m2!1sen!2sin" width="300" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-sm-12 col-xs-12"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle-button"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/customercontent/js/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
+    <script src="~/customercontent/js/popper.min.js"></script>
+    <script src="~/customercontent/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $(".do-nicescrol4").niceScroll(".wrap");
+    </script>
+    <script type="text/javascript">$("body").niceScroll();</script> -->
+</body>
+</html>

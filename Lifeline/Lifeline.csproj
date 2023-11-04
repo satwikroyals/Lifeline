@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA91D4DA-FCEC-420E-8D98-13E7C8F9E3C2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lifeline</RootNamespace>
+    <AssemblyName>Lifeline</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\css\bootstrap-datepicker.css" />
+    <Content Include="content\css\bootstrap.min.css" />
+    <Content Include="content\css\bs-datetime.css" />
+    <Content Include="content\css\example-styles.css" />
+    <Content Include="content\css\materialdesignicons.min.css" />
+    <Content Include="content\css\styles.css" />
+    <Content Include="content\css\theme.min.css" />
+    <Content Include="content\customers\1\123.png" />
+    <Content Include="content\images\Enter.png" />
+    <Content Include="content\images\Eziid-Image1.jpeg" />
+    <Content Include="content\images\eziid-Loginbackground.png" />
+    <Content Include="content\images\eziid-Loginbackground2.png" />
+    <Content Include="content\images\Eziid-LOGO.png" />
+    <Content Include="content\images\eziid-strip.png" />
+    <Content Include="content\images\header-logo.png" />
+    <Content Include="content\images\loginbg.jpg" />
+    <Content Include="content\images\logo.png" />
+    <Content Include="content\images\noimage.png" />
+    <Content Include="content\images\ThanksIMAGE2.jpeg" />
+    <Content Include="content\index.html" />
+    <Content Include="content\js\bootstrap-datepicker.min.js" />
+    <Content Include="content\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="content\js\bootstrap.min.js" />
+    <Content Include="content\js\campaign.js" />
+    <Content Include="content\js\coordinator.js" />
+    <Content Include="content\js\documents.js" />
+    <Content Include="content\js\global.js" />
+    <Content Include="content\js\jquery-3.3.1.slim.min.js" />
+    <Content Include="content\js\jquery.min.js" />
+    <Content Include="content\js\moment.min.js" />
+    <Content Include="content\js\popper.min.js" />
+    <Content Include="content\js\volunteers.js" />
+    <Content Include="content\memberhelpimages\1\682055.png" />
+    <Content Include="customercontent\css\bootstrap.min.css" />
+    <Content Include="customercontent\css\styles.css" />
+    <Content Include="customercontent\images\1.jpg" />
+    <Content Include="customercontent\images\3.jpg" />
+    <Content Include="customercontent\images\3.png" />
+    <Content Include="customercontent\images\4.jpg" />
+    <Content Include="customercontent\images\5.jpg" />
+    <Content Include="customercontent\images\6.jpg" />
+    <Content Include="customercontent\images\7.jpg" />
+    <Content Include="customercontent\images\Final-Logo.png" />
+    <Content Include="customercontent\images\first_screen.jpg" />
+    <Content Include="customercontent\images\Lifeline-FamilyBackground.png" />
+    <Content Include="customercontent\images\Noprofileimage.png" />
+    <Content Include="customercontent\images\play.png" />
+    <Content Include="customercontent\images\profile-pic.jpg" />
+    <Content Include="customercontent\images\profile.png" />
+    <Content Include="customercontent\images\signin.jpg" />
+    <Content Include="customercontent\images\swipe.gif" />
+    <Content Include="customercontent\images\tlogo.png" />
+    <Content Include="customercontent\images\win.png" />
+    <Content Include="customercontent\js\bootstrap.min.js" />
+    <Content Include="customercontent\js\jquery-2.1.4.min.js" />
+    <Content Include="customercontent\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="customercontent\js\jquery.nicescroll.js" />
+    <Content Include="customercontent\js\jquery.nicescroll.min.js" />
+    <Content Include="customercontent\js\popper.min.js" />
+    <Content Include="customercontent\profile-page.html" />
+    <Content Include="Global.asax" />
+    <Content Include="IosPush\lifeline\LifneCoordinator.pem" />
+    <Content Include="IosPush\lifeline\usersimplepush.php" />
+    <Content Include="IosPush\lifeline\simplepush.php" />
+    <Content Include="IosPush\lifeline\Lifeline.pem" />
+    <Content Include="content\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Areas\Coordinator\Views\web.config" />
+    <Content Include="Areas\Coordinator\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Shared\CoordiLayout.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Account\Dashboard.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Member\Members.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Member\AddMember.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Campaign\Campaigns.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Campaign\AddCampaign.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Incidents\ViewIncidents.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Notification\ViewNotifications.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Notification\CreateNotification.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Campaign\CampaignMembers.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Neighbourhood\Neighbourhoods.cshtml" />
+    <Content Include="Areas\Coordinator\Views\Neighbourhood\AddNeighbourhood.cshtml" />
+    <None Include="Properties\PublishProfiles\LifeLine Publish - Kiran.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\CampaignController.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\NeighbourhoodController.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\IncidentsController.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\MemberController.cs" />
+    <Compile Include="Areas\Coordinator\Controllers\NotificationController.cs" />
+    <Compile Include="Areas\Coordinator\CoordinatorAreaRegistration.cs" />
+    <Compile Include="Areas\Coordinator\Models\LoginModel.cs" />
+    <Compile Include="Code\ExceptionUtility.cs" />
+    <Compile Include="Code\Globalsettings.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoordinatorsController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sendmail.cs" />
+    <Compile Include="Services\AdminController.cs" />
+    <Compile Include="Services\CoordinatorController.cs" />
+    <Compile Include="Services\GlobalController.cs" />
+    <Compile Include="Services\MemberController.cs" />
+    <Compile Include="Services\MessageController.cs" />
+    <Compile Include="Services\NotificationController.cs" />
+    <Compile Include="Services\ResourceController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Member\Help.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Coordinators\ViewCoordinators.cshtml" />
+    <Content Include="Views\Coordinators\AddCoordinator.cshtml" />
+    <Content Include="Views\Coordinators\Locations.cshtml" />
+    <Content Include="Views\Member\Members.cshtml" />
+    <Content Include="Views\Member\AddVolunteer.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Dashboard.cshtml" />
+    <Content Include="Views\Resource\Resources.cshtml" />
+    <Content Include="Views\Resource\AddResourceDoc.cshtml" />
+    <Content Include="Views\Public\RegisterCoordinator.cshtml" />
+    <Content Include="Views\Shared\_PublicLayout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="content\memberhelpvideos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lifeline.BAL\Lifeline.BAL.csproj">
+      <Project>{74706007-9e95-48f6-aae5-8de0c6c89c69}</Project>
+      <Name>Lifeline.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lifeline.DAL\Lifeline.DAL.csproj">
+      <Project>{6275b2b1-50d2-4d34-818a-961e5402450b}</Project>
+      <Name>Lifeline.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lifeline.Entity\Lifeline.Entity.csproj">
+      <Project>{efb68aa3-1ce2-4883-a75d-9d154b3e4bef}</Project>
+      <Name>Lifeline.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1632</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1632/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

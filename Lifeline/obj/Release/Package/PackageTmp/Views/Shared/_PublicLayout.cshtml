@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using Lifeline.Code
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lifeline</title>
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Globalsettings.appimagespath("favicon.ico")" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="@Globalsettings.appcsspath("theme.min.css")" rel="stylesheet" type="text/css">
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" href="css/font-awesome-ie7.min.css"><![endif]-->
+    <!--[if IE]> <link href="css/ie.css" rel="stylesheet" > <![endif]-->
+    <!--Js-->
+    <script type="text/javascript" src="@Globalsettings.appjspath("jquery.min.js")"></script>
+    <script type="text/javascript" src="@Globalsettings.appjspath("bootstrap.min.js")"></script>
+    <script>
+        var Websiteapiurl = '@Globalsettings._websiteurl' + "api/";
+        var clienturl = '@Globalsettings._websiteurl' + "Admin/";
+        var errmsgprefix = 'Some Problem while ';
+        var aid = '1';
+    </script>
+    <script type="text/javascript" src="@Globalsettings.appjspath("global.js")"></script>
+</head>
+<body id="dashboard" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed responsive clearfix" data-active="dashboard " data-smooth-scrolling="1">
+
+    <div class="vd_body">
+        <!-- Header Start -->
+        <header class="header-1" id="header">
+            <div class="vd_top-menu-wrapper">
+                <div class="container ">
+                    <div class="vd_top-nav vd_nav-width  ">
+                        <div class="vd_panel-header">
+                            <div class="logo">
+                                <a href="javascript:void(0)">
+                                    <img alt="Lifeline" title="Lifeline" class="img-responsive" src="@Globalsettings.appimagespath("header-logo.png")" width="65">
+                                </a>
+                            </div>
+                           
+                        </div>
+                        <!-- vd_panel-header -->
+                    </div>
+                    <div class="vd_container">
+                        <div class="row">
+                            <div class="col-sm-5 col-xs-12">
+                            </div>
+                            <div class="col-sm-7 col-xs-12">
+                                <div class="vd_mega-menu-wrapper">
+                                 
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+            </div>
+            <!-- vd_primary-menu-wrapper -->
+        </header>
+        <!-- Header Ends -->
+        <div class="content">
+            <div class="container">
+              
+                <div style="margin:1rem 1rem 2rem 1rem">
+                    <div class="vd_content-wrapper">
+                        <div class="vd_c ontainer">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- Footer Start -->
+        <footer class="footer-1" id="footer">
+            <div class="vd_bottom ">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-xs-12">
+                            <div class="copyright">
+                                Copyright &copy;2021 Lifeline. All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+        </footer>
+        <!-- Footer END -->
+    </div>
+    <!-- .vd_body END  -->
+    <a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"><i class="fa  fa-angle-up"></i></a>
+    @RenderSection("pagescripts", false)
+
+</body>
+
+</html>
+
+
+
+
+

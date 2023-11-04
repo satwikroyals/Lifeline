@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\akira\OneDrive\Desktop\LifeLine Publish - Kiran</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/Coordinator/Views/Account/Dashboard.cshtml">
+      <publishTime>08/31/2021 13:56:35</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Account/Login.cshtml">
+      <publishTime>08/31/2021 10:04:40</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Campaign/AddCampaign.cshtml">
+      <publishTime>11/08/2021 15:49:37</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Campaign/CampaignMembers.cshtml">
+      <publishTime>12/04/2021 16:30:49</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Campaign/Campaigns.cshtml">
+      <publishTime>01/24/2022 11:34:13</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Incidents/ViewIncidents.cshtml">
+      <publishTime>02/09/2023 11:18:49</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Member/AddMember.cshtml">
+      <publishTime>08/11/2022 11:58:40</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Member/Members.cshtml">
+      <publishTime>08/11/2022 14:39:09</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Neighbourhood/AddNeighbourhood.cshtml">
+      <publishTime>01/25/2022 17:51:45</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Neighbourhood/Neighbourhoods.cshtml">
+      <publishTime>01/25/2022 17:52:09</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Notification/CreateNotification.cshtml">
+      <publishTime>10/21/2021 14:55:15</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Notification/ViewNotifications.cshtml">
+      <publishTime>01/24/2022 11:34:54</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/Shared/CoordiLayout.cshtml">
+      <publishTime>01/25/2022 17:18:43</publishTime>
+    </File>
+    <File Include="Areas/Coordinator/Views/web.config">
+      <publishTime>08/30/2021 16:11:01</publishTime>
+    </File>
+    <File Include="bin/Dapper.dll">
+      <publishTime>06/05/2018 09:15:54</publishTime>
+    </File>
+    <File Include="bin/DbFactory.dll">
+      <publishTime>11/03/2018 13:48:06</publishTime>
+    </File>
+    <File Include="bin/Lifeline.BAL.dll">
+      <publishTime>02/13/2023 13:42:50</publishTime>
+    </File>
+    <File Include="bin/Lifeline.DAL.dll">
+      <publishTime>02/13/2023 13:42:49</publishTime>
+    </File>
+    <File Include="bin/Lifeline.dll">
+      <publishTime>02/13/2023 13:42:50</publishTime>
+    </File>
+    <File Include="bin/Lifeline.Entity.dll">
+      <publishTime>02/13/2023 13:42:49</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>06/05/2018 09:55:18</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/08/2021 10:11:12</publishTime>
+    </File>
+    <File Include="bin/SendGrid.dll">
+      <publishTime>02/05/2020 12:04:37</publishTime>
+    </File>
+    <File Include="bin/SendGrid.SmtpApi.dll">
+      <publishTime>02/05/2020 12:04:40</publishTime>
+    </File>
+    <File Include="bin/SendGridMail.dll">
+      <publishTime>02/05/2020 12:04:49</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>02/08/2021 10:11:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/08/2021 10:11:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>02/08/2021 10:11:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>02/08/2021 10:11:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/08/2021 10:11:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/08/2021 10:11:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>02/08/2021 10:11:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>02/08/2021 10:11:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>02/08/2021 10:11:09</publishTime>
+    </File>
+    <File Include="content/css/bootstrap-datepicker.css">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/css/bootstrap.min.css">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/css/bs-datetime.css">
+      <publishTime>09/01/2021 11:48:28</publishTime>
+    </File>
+    <File Include="content/css/example-styles.css">
+      <publishTime>09/01/2021 11:48:28</publishTime>
+    </File>
+    <File Include="content/css/materialdesignicons.min.css">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/css/styles.css">
+      <publishTime>11/01/2021 10:08:23</publishTime>
+    </File>
+    <File Include="content/css/theme.min.css">
+      <publishTime>08/11/2022 09:58:40</publishTime>
+    </File>
+    <File Include="content/customers/1/123.png">
+      <publishTime>04/07/2021 11:43:03</publishTime>
+    </File>
+    <File Include="content/fonts/materialdesignicons-webfont.woff2">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/Enter.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/Eziid-Image1.jpeg">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/eziid-Loginbackground.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/eziid-Loginbackground2.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/Eziid-LOGO.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/eziid-strip.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/header-logo.png">
+      <publishTime>08/24/2021 15:25:14</publishTime>
+    </File>
+    <File Include="content/images/loginbg.jpg">
+      <publishTime>08/30/2021 16:27:06</publishTime>
+    </File>
+    <File Include="content/images/logo.png">
+      <publishTime>08/24/2021 15:25:18</publishTime>
+    </File>
+    <File Include="content/images/noimage.png">
+      <publishTime>08/24/2021 15:25:18</publishTime>
+    </File>
+    <File Include="content/images/ThanksIMAGE2.jpeg">
+      <publishTime>08/24/2021 15:25:18</publishTime>
+    </File>
+    <File Include="content/index.html">
+      <publishTime>01/24/2022 11:33:31</publishTime>
+    </File>
+    <File Include="content/js/bootstrap-datepicker.min.js">
+      <publishTime>08/24/2021 15:25:18</publishTime>
+    </File>
+    <File Include="content/js/bootstrap-datetimepicker.min.js">
+      <publishTime>09/01/2021 11:49:08</publishTime>
+    </File>
+    <File Include="content/js/bootstrap.min.js">
+      <publishTime>08/24/2021 15:25:20</publishTime>
+    </File>
+    <File Include="content/js/campaign.js">
+      <publishTime>09/01/2021 10:23:29</publishTime>
+    </File>
+    <File Include="content/js/coordinator.js">
+      <publishTime>08/11/2022 14:38:38</publishTime>
+    </File>
+    <File Include="content/js/documents.js">
+      <publishTime>11/18/2021 15:22:12</publishTime>
+    </File>
+    <File Include="content/js/global.js">
+      <publishTime>08/11/2022 11:39:56</publishTime>
+    </File>
+    <File Include="content/js/jquery-3.3.1.slim.min.js">
+      <publishTime>08/24/2021 15:25:22</publishTime>
+    </File>
+    <File Include="content/js/jquery.min.js">
+      <publishTime>08/24/2021 15:25:24</publishTime>
+    </File>
+    <File Include="content/js/moment.min.js">
+      <publishTime>09/01/2021 11:49:07</publishTime>
+    </File>
+    <File Include="content/js/popper.min.js">
+      <publishTime>08/24/2021 15:25:24</publishTime>
+    </File>
+    <File Include="content/js/volunteers.js">
+      <publishTime>08/11/2022 14:40:03</publishTime>
+    </File>
+    <File Include="content/memberhelpimages/1/682055.png">
+      <publishTime>12/22/2021 12:50:59</publishTime>
+    </File>
+    <File Include="customercontent/css/bootstrap.min.css">
+      <publishTime>02/26/2021 16:24:42</publishTime>
+    </File>
+    <File Include="customercontent/css/styles.css">
+      <publishTime>02/26/2021 16:24:42</publishTime>
+    </File>
+    <File Include="customercontent/images/1.jpg">
+      <publishTime>02/26/2021 16:24:42</publishTime>
+    </File>
+    <File Include="customercontent/images/3.jpg">
+      <publishTime>02/26/2021 16:24:42</publishTime>
+    </File>
+    <File Include="customercontent/images/3.png">
+      <publishTime>02/26/2021 16:24:42</publishTime>
+    </File>
+    <File Include="customercontent/images/4.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/5.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/6.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/7.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/Final-Logo.png">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/first_screen.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/Lifeline-FamilyBackground.png">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/Noprofileimage.png">
+      <publishTime>02/26/2021 16:49:02</publishTime>
+    </File>
+    <File Include="customercontent/images/play.png">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/profile-pic.jpg">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/profile.png">
+      <publishTime>02/26/2021 16:24:43</publishTime>
+    </File>
+    <File Include="customercontent/images/signin.jpg">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/images/swipe.gif">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/images/tlogo.png">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/images/win.png">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/bootstrap.min.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/jquery-2.1.4.min.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/jquery-3.5.1.slim.min.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/jquery.nicescroll.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/jquery.nicescroll.min.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/js/popper.min.js">
+      <publishTime>02/26/2021 16:24:44</publishTime>
+    </File>
+    <File Include="customercontent/profile-page.html">
+      <publishTime>02/26/2021 16:24:41</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/08/2021 10:11:14</publishTime>
+    </File>
+    <File Include="IosPush/lifeline/Lifeline.pem">
+      <publishTime>03/17/2021 13:52:43</publishTime>
+    </File>
+    <File Include="IosPush/lifeline/LifneCoordinator.pem">
+      <publishTime>03/05/2021 15:29:51</publishTime>
+    </File>
+    <File Include="IosPush/lifeline/simplepush.php">
+      <publishTime>03/17/2021 09:19:28</publishTime>
+    </File>
+    <File Include="IosPush/lifeline/usersimplepush.php">
+      <publishTime>03/18/2021 11:10:56</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/26/2021 16:28:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>02/26/2021 16:27:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>02/26/2021 16:27:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>02/26/2021 16:27:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>02/26/2021 16:28:20</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>02/26/2021 16:28:20</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>02/26/2021 16:28:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>02/26/2021 16:28:22</publishTime>
+    </File>
+    <File Include="Views/Account/Dashboard.cshtml">
+      <publishTime>09/01/2021 16:36:49</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>08/31/2021 08:35:14</publishTime>
+    </File>
+    <File Include="Views/Coordinators/AddCoordinator.cshtml">
+      <publishTime>08/11/2022 11:45:33</publishTime>
+    </File>
+    <File Include="Views/Coordinators/Locations.cshtml">
+      <publishTime>11/01/2021 15:14:19</publishTime>
+    </File>
+    <File Include="Views/Coordinators/ViewCoordinators.cshtml">
+      <publishTime>08/11/2022 14:37:24</publishTime>
+    </File>
+    <File Include="Views/Member/AddVolunteer.cshtml">
+      <publishTime>04/27/2021 16:09:10</publishTime>
+    </File>
+    <File Include="Views/Member/Help.cshtml">
+      <publishTime>01/18/2022 14:47:44</publishTime>
+    </File>
+    <File Include="Views/Member/Members.cshtml">
+      <publishTime>12/04/2021 16:25:33</publishTime>
+    </File>
+    <File Include="Views/Public/RegisterCoordinator.cshtml">
+      <publishTime>08/11/2022 15:03:32</publishTime>
+    </File>
+    <File Include="Views/Resource/AddResourceDoc.cshtml">
+      <publishTime>01/18/2022 15:48:03</publishTime>
+    </File>
+    <File Include="Views/Resource/Resources.cshtml">
+      <publishTime>01/24/2022 11:35:18</publishTime>
+    </File>
+    <File Include="Views/Shared/_AdminLayout.cshtml">
+      <publishTime>08/11/2022 09:16:56</publishTime>
+    </File>
+    <File Include="Views/Shared/_PublicLayout.cshtml">
+      <publishTime>08/11/2022 09:44:36</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>02/08/2021 10:11:07</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/08/2023 15:32:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

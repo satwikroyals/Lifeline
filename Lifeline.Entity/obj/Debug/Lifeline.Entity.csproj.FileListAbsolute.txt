@@ -1,0 +1,16 @@
+D:\Kansolve projects\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.csprojResolveAssemblyReference.cache
+D:\Charles\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.csprojResolveAssemblyReference.cache
+D:\Projects\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.dll
+D:\Projects\Lifeline\Lifeline.Entity\bin\Debug\Lifeline.Entity.pdb
+D:\Projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.csproj.AssemblyReference.cache
+D:\Projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.csproj.CoreCompileInputs.cache
+D:\Projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.dll
+D:\Projects\Lifeline\Lifeline.Entity\obj\Debug\Lifeline.Entity.pdb

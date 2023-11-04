@@ -1,0 +1,252 @@
+﻿
+@{
+    ViewBag.Title = "ViewCoordinators";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Code
+@*<main class="page-content">
+    <div class="container-fluid px-5">
+        <div class="">
+            <div class="">
+                <input type="hidden" name="locationid" id="locationid" value="0" />
+                <div class="tab-content">
+                    <div class="row px-4 my-3 filt">
+                        <div class="col-xs-6 col-md-3 col-lg-3 mt-4">
+                            <label>Total : </label> <span id="totalrec">50</span>
+                        </div>
+                        <div class="col-md-1 px-2 my-2">
+                            <select name="selector1" id="ddlpagesize" class="form-control">
+                                <option>25</option>
+                                <option>50</option>
+                                <option>75</option>
+                                <option>100</option>
+                            </select>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 px-2 hide norec">
+                        <div class="p-2 my-3 alert alert-danger">
+                            <strong>No records found</strong>
+                        </div>
+                    </div>
+                    <div id="loader" class="loader"></div>
+                    <div class="clearfix"></div>
+                    <div class="tblcontent">
+                        <div class="table-responsive" id="tableclient">
+                            <table id="tbldataabs" class="mytbl table display dttbl table-striped table-hover">
+                                <thead class="oc-thead">
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Image</th>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="oc-tbody" id="tbldata"></tbody>
+                            </table>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="px-2 my-2 pull-right hide">
+                            <ul class="pagination m-0">
+                                <li class="active"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tblcontent">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="oc-thead">
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Image</th>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="oc-tbody" id="tbldata"></tbody>
+                            </table>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="px-2 my-2 pull-right">
+                            <ul class="pagination m-0">
+                                <li class="active"><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>*@
+
+
+
+
+
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Coordinator </li>
+                        <li class="active">View</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 divsearch">
+                    <div class="col-lg-4 hide">
+                        <label class="navpad"> <i class="fa fa-building-o iconcolr" aria-hidden="true"></i> Select Business</label>
+                        <div class="form-group">
+                            <select class="ddlsearchbusiness hide" data-placeholder="No outlets found" id="ddlsearchbusiness"></select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="locationid" id="locationid" value="0" />
+                    <div class="col-lg-2">
+                        <label class="col-sm-10 control-label navpad">Search</label>
+                        <div class="input-group col-sm-12">
+                            <input type="text" placeholder="Search Name" id="search">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 hide">
+                        <label class="col-sm-10 control-label navpad">From</label>
+                        <div class="input-group col-sm-12">
+                            <input type="text" placeholder="Date" id="from" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default cal-time" type="button">  <i class="fa fa-calendar iconcolr" aria-hidden="true"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 hide">
+                        <label class="col-sm-10 control-label navpad">To</label>
+                        <div class="input-group col-sm-12">
+                            <input type="text" placeholder="Date" id="to" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default cal-time" type="button">  <i class="fa fa-calendar iconcolr" aria-hidden="true"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label class="navpad"></label>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary searchrowbtn mr-10" id="btnShow">Search</button>
+                            <button type="button" class="btn btn-primary searchrowbtn ml-10" id="btnShowAll">Clear</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 valerr"></div>
+                </div>
+
+                <div class="col-xs-12 hrline-break"><hr></div>
+                <div class="pageloader hide"></div>
+                <div class="col-lg-12 tbbg2 pagecontent grid-pi history">
+                    <div class="col-lg-12 hide nodata dataerr" id="norec">
+                        No Coordinators Found.
+                    </div>
+                    <div id="tblgrid" class="hide">
+                        <div class="col-lg-12 grid-i">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    Total Coordinators : <span id="totalrec">0</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    Page Size :
+                                    <select name="ddlpagesize" id="ddlpagesize" class="form-control ps">
+                                        <option>25</option>
+                                        <option>50</option>
+                                        <option>75</option>
+                                        <option>100</option>
+                                        <option>200</option>
+                                        <option>300</option>
+                                        <option>400</option>
+                                        <option>500</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 text-right">
+                                <div class="form-group" id="showpageinfo">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 text-right">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="tblcontent">
+                            <div class="table-responsive">
+                                <table id="tbldataabs" class="mytbl table display dttbl table-striped table-hover">
+                                    <thead class="oc-thead">
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Image</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>Mobile</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="oc-tbody" id="tbldata"></tbody>
+                                </table>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="px-2 my-2 pull-right">
+                                <ul class="pagination m-0">
+                                    <li class="active"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("coordinator.js")"></script>
+    <link href="@Globalsettings.appcsspath("bs-datetime.css")" rel="stylesheet">
+    <script type="text/javascript" src="@Globalsettings.appjspath("moment.min.js")"></script>
+    <script type="text/javascript" src="@Globalsettings.appjspath("bootstrap-datetimepicker.min.js")"></script>
+    <script>
+        $(document).ready(function () {
+            getcoordinatorpage();
+        });
+    </script>
+}
+
+
+
+
+

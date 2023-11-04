@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewBag.Title = "AddVolunteer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Code
+@model Lifeline.Entity.MemberEntity
+<main class="page-content">
+    <div class="container-fluid px-5">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs border-0">
+                    <li class="tab-bg"><a data-toggle="tab" id="vieworg" href="">Show Members</a></li>
+                    <li class="active tab-bg"><a data-toggle="tab" id="addorg" href="">Member Info</a></li>
+                </ul>
+                <div class="alert alert-danger vsdiv-full bo-l-0 bo-r-0 bo-rad-0 clearfix @(Html.ViewData.ModelState.IsValid?"hide":"show")" id="error" tabindex='1'>
+                    <span>Errors List</span>
+                    @Html.ValidationSummary()
+                </div>
+                <div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-lg-12 ">
+                            @using (Html.BeginForm("AddUpdateVolunteer", "Member", FormMethod.Post, new { id = "form", @class = "needs-validation", enctype = "multipart/form-data" }))
+                            {
+                                <input type="hidden" id="MemberId" name="MemberId" value="@Model.MemberId" />
+                                @*<input type="hidden" id="CustomerId" name="CustomerId" value="@ViewBag.id" />*@
+                                <div class="form-group">
+                                    <div class="my-2">
+                                        <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" errormsg="Enter Fisrtname" id="FirstName" name="FirstName" placeholder="FirstName" value="@Model.FirstName">
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" errormsg="Enter Lastname" id="LastName" name="LastName" placeholder="LastName" value="@Model.LastName">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" type="text" id="email" name="EmailId" placeholder="Email Address" errormsg="Enter EmailId" value="@Model.EmailId">
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" type="text" id="mobile" name="Mobile" placeholder="Mobile Number" errormsg="Enter Mobile Number" value="@Model.Mobile" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        @*<div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" type="text" id="UserId" name="UserId" placeholder="User Id" errormsg="Enter UserId" value="@Model.UserId">
+                                        </div>*@
+                                        @*<div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input isvalidate" type="text" maxlength="4" id="Pin" name="Pin" placeholder="Pin" errormsg="Enter Pin" value="@Model.Pin" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>*@
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input isvalidate" name="CountryId" id="CountryId" errormsg="Select country" onchange="GetStateddl()" default="0" bindval="@Model.CountryId">
+                                                <option value="0">Country</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input" id="StateId" name="StateId" onchange="GetRegionddl()" errormsg="Select State" default="0" bindval="0">
+                                                <option value="0">State</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input" name="" id="RegionId" errormsg="Select Region" onchange="GetTownddl()" default="0" bindval="0">
+                                                <option value="0">Region</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input" id="TownId" name="TownId" errormsg="Select Town" onchange="GetLocationddl()" default="0" bindval="0">
+                                                <option value="0">Town</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input isvalidate" name="LocationId" id="LocationId" errormsg="Select Location" default="0" bindval="@Model.LocationId">
+                                                <option value="0">Location</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                            <select class="form-control main-input staticddl" id="Gender" name="Gender" errormsg="Select Gender" default="0" bindvalue="@Model.Gender">
+                                                <option value="0">Gender</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Other</option>
+                                            </select>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 my-2 px-0">
+                                            <div class="col-xs-6 col-sm-6 px-2">
+                                                <input class="form-control main-input" type="text" placeholder="Postcode" name="Postcode" id="Postcode" value="@Model.PostCode">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-8 my-2 px-2">
+                                            <textarea class="form-control main-input" id="GeoAddress" name="GeoAddress" placeholder="Address">@Model.GeoAddress</textarea>
+                                            <input type="hidden" name="Latitude" id="Latitude" value="@Model.Latitude" />
+                                            <input type="hidden" name="Longitude" id="Longitude" value="@Model.Longitude" />
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="my-2">
+                                        <div class="col-xs-4 my-2 px-2">
+                                            <textarea class="form-control main-input" rows="3" name="MemberInfo" id="MemberInfo" placeholder="Member Info">@Model.MemberInfo</textarea>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                            <input class="form-control main-input @(Model.MemberId==0?"isvalidate":"")" type="file" id="Image" name="Image" accept="image/x-png,image/jpeg" fileformates="png,jpg,jpeg" placeholder="Upload Image" onchange="readURL(this, '#tempimg')">
+                                            <img id="tempimg" src="@Model.CustomerImagePath" alt="Image preview..." class="fileupimgprev" />
+                                            <input type="hidden" id="hidbinary" name="ProfilePic" value="@Model.ProfilePic" />
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12 col-sm-8 my-2 px-2">
+                                            <div class="col-xs-12 pl-1 pr-4">
+                                                <div class="checkbox custom-checkbox my-3">
+                                                    <label class="pl-2 prussian-txt">
+                                                        <input type="checkbox" checked="@(Model.IsCoordinator == 0 ? false : true)" name="IsCoordinator" value="1">
+                                                        Is Volunteer<span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="my-2">
+                                                <div class="col-xs-12 col-sm-6 my-2 px-2">
+                                                    <div class="col-xs-12 px-4">
+                                                        Is Coordinator
+                                                        <label class="switch mb-0">
+                                                            <input type="checkbox" value="2" id="IsCoordinator" name="IsCoordinator" checked="@(Model.IsCoordinator == 0 ? false : true)">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>*@
+                                    </div>
+                                    <div class="row mx-0 justify-content-center">
+                                        <div class="col-md-12 my-5 px-5 text-left pull-right">
+                                            <div class="mb-5">
+                                                <h4>Make Member active</h4>
+                                                <div class="row m-0">
+                                                    <div class="col-xs-4 pr-0">
+                                                        <div class="checkbox custom-checkbox my-0 text-left">
+                                                            <label class="pl-2 prussian-txt"><input name="Status" type="radio" value="1" checked="@(Model.Status == 1 ? true : false)">Yes<span class="checkmark"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 pr-0">
+                                                        <div class="checkbox custom-checkbox my-0 text-left">
+                                                            <label class="pl-2 prussian-txt"><input name="Status" type="radio" value="0" checked="@(Model.Status == 0 ? true : false)">No<span class="checkmark"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="btn oc-btn" id="subbtn" onclick="return validate()">Save & Create</button>
+                                                <a class="pl-3">Help ?</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @*<div>
+                                            <div class="p  ull-right">
+                                                <button type="submit" class="btn co-btn mr-4" id="subbtn" onclick="return validate()">@(Model.MemberId == 0 ? "Save & Create" : "Update")</button>
+                                            </div>
+                                        </div>*@
+                                    <div class="clearfix"></div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div id="map"></div>
+<div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon">
+    <span id="place-name" class="title"></span><br>
+    <span id="place-address"></span>
+</div>
+
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("volunteers.js")"></script>
+    <script type="text/javascript" src="@Url.Content(Globalsettings.appjspath("jquery.validate.min.js"))"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.34&sensor=false&key=@Globalsettings.GetGoogleMapsApiKey()&libraries=places"></script>
+    <script>
+        $(document).ready(function () {
+            GetCountryddl();
+            GetLocationddl();
+            $('.staticddl').each(function () {
+                $(this).val($(this).attr('bindvalue'));
+            });
+        });
+        document.getElementById("vieworg").onclick = function () {
+            location.href = "Members";
+        };
+        document.getElementById("addorg").onclick = function () {
+            location.href = "AddVolunteer";
+        };
+    </script>
+    }
+

@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Code
+<main class="page-content">
+    <div class="container-fluid px-5">
+        <div class="">
+            <div class="">
+                <ul class="nav nav-tabs border-0">
+                    <li class="active tab-bg"><a data-toggle="tab" id="vieworg" href="">Show Coordinators</a></li>
+                    <li class="tab-bg"><a data-toggle="tab" id="addorg" href="">Add Coordinator</a></li>
+                </ul>
+                <input type="hidden" name="locationid" id="locationid" value="0" />
+                <div class="tab-content">
+                    <div class="row px-4 my-3 filt">
+                        <div class="col-xs-6 col-md-3 col-lg-3 mt-4">
+                            <label>Total : </label> <span id="totalrec">50</span>
+                        </div>
+                        <div class="col-md-1 px-2 my-2">
+                            <select name="selector1" id="ddlpagesize" class="form-control">
+                                <option>25</option>
+                                <option>50</option>
+                                <option>75</option>
+                                <option>100</option>
+                            </select>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 px-2 hide norec">
+                        <div class="p-2 my-3 alert alert-danger">
+                            <strong>No records found</strong>
+                        </div>
+                    </div>
+                    <div id="loader" class="loader"></div>
+                    <div class="clearfix"></div>
+                    <div class="tblcontent">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="oc-thead">
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Image</th>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                        <th>Edit</th>
+                                        @*<th>Delete</th>*@
+                                    </tr>
+                                </thead>
+                                <tbody class="oc-tbody" id="tbldata"></tbody>
+                                <tbody class="oc-tbody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="px-2 my-2 pull-right">
+                            <ul class="pagination m-0">
+                                <li class="active"><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("coordinator.js")"></script>
+    <link href="@Globalsettings.appcsspath("bs-datetime.css")" rel="stylesheet">
+    <script type="text/javascript" src="@Globalsettings.appjspath("moment.min.js")"></script>
+    <script type="text/javascript" src="@Globalsettings.appjspath("bootstrap-datetimepicker.min.js")"></script>
+    <script>
+        $(document).ready(function () {
+            getmemberspage();
+        });
+        document.getElementById("vieworg").onclick = function () {
+            location.href = "Members";
+        };
+        document.getElementById("addorg").onclick = function () {
+            location.href = "AddVolunteer";
+        };
+    </script>
+}
+
+
+
+
+
+
+
+
+

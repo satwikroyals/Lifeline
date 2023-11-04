@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "AddResourceDoc";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Entity;
+@using Lifeline.Code;
+@model Lifeline.Entity.ResourceEntity
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Document  </li>
+                        <li class="active">Add/Edit</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <div class="row" id="advanced-input">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-md-12">
+                            <div class="panel widget">
+                                <div class="col-md-12">
+                                    <div class="panel-heading vd_bg-grey1">
+                                        <h3 class="panel-title"><span class="menu-icon"><i class="fa fa-building-o"></i></span>Add/Edit Document </h3>
+                                    </div>
+                                    <div class="panel-body form-horizontal">
+                                        @using (Html.BeginForm("AddDocument", "Resource", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                        {
+                                            <div class="alert alert-danger vsdiv-full bo-l-0 bo-r-0 bo-rad-0 clearfix @(Html.ViewData.ModelState.IsValid?"hide":"show")" id="error" tabindex='1'>
+                                                <span>Errors List</span>
+                                                @Html.ValidationSummary()
+                                            </div>
+                                            @*@Html.AntiForgeryToken();*@
+                                            @*@Html.ValidationSummary(false, "", new { @class = "alert alert-danger err" })*@
+                                            <input type="hidden" id="ResourceId" name="ResourceId" value="@Request.QueryString["id"]" />
+                                            <div class="my-2">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Title : <span class="vd_red">*</span></label>
+                                                    <div class="col-sm-5 controls">
+                                                        <input type="text" class="width-70 width-110 myfilds mytxtfilds isvalidate" errormsg="Enter FirstName" name="DocTitle" id="DocTitle" value="@Model.DocTitle" placeholder="Title" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Description : <span class="vd_red">*</span></label>
+                                                    <div class="col-sm-5 controls">
+                                                        <textarea class="width-70 width-110 myfilds mytxtfilds isvalidate" errormsg="Enter Description" name="ResourceBrief" id="ResourceBrief" placeholder="Description">@Model.ResourceBrief</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Video Url : <span class="vd_red"></span></label>
+                                                    <div class="col-sm-5 controls">
+                                                        <input type="text" class="width-70 width-110 myfilds mytxtfilds" name="VideoUrl" id="VideoUrl" value="@Model.VideoUrl" placeholder="Video Url" maxlength="1000" autocomplete="off" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Case Study Reference : <span class="vd_red"></span></label>
+                                                    <div class="col-sm-5 controls">
+                                                        <input type="text" class="width-70 width-110 myfilds mytxtfilds" name="CaseStudyId" id="CaseStudyId" value="@Model.CaseStudyId" placeholder="Case Study" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Document : <span class="vd_red">*</span></label>
+                                                    <div class="col-sm-5 controls">
+                                                        <iframe src="@Model.ResourceFilePath" id="imgpreview" class="p-2" height="200" width="200"></iframe>
+                                                        @*<img id="imgpreview" src="" class="previewimg" />*@<br /><br />
+                                                        <input type="hidden" name="Document" id="Document" value="@Model.ResourceDoc" />
+                                                        <input type="file" class="width-70 width-110 myfilds mytxtfilds @(Model.ResourceId==0?"isvalidate":"")" errormsg="Upload Document" placeholder="Upload First Prize Image" name="doc" id="doc" onchange="readURL(this, '#imgpreview');" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group form-actions">
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-9">
+                                                    <button class="btn vd_btn vd_bg-green vd_white" onclick="return validate()" type="submit"><i class="icon-ok"></i>Save</button>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("documents.js")"></script>
+    <script type="text/javascript" src="@Url.Content(Globalsettings.appjspath("jquery.validate.min.js"))"></script>
+    }
+
+
+

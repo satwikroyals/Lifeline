@@ -1,0 +1,10 @@
+D:\Kansolve projects\Lifeline\Lifeline.Entity\bin\Release\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.Entity\bin\Release\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.csprojResolveAssemblyReference.cache
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.Entity\bin\Release\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.Entity\bin\Release\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.csprojResolveAssemblyReference.cache
+D:\Charles\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.Entity\obj\Release\Lifeline.Entity.pdb

@@ -1,0 +1,558 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Game Snatcherz</title>
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/content/images/favicon.ico">
+    <!-- CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/theme.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" href="css/font-awesome-ie7.min.css"><![endif]-->
+    <!--[if IE]> <link href="css/ie.css" rel="stylesheet" > <![endif]-->
+    <!--Js-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script>
+        //global javascript variable to get websiteurl,websiteurlapi .
+        var websiteurl = 'http://gamesnatcherz.com/';
+        var websiteurlapi = 'http://www.gamesnatcherz.com/api/';
+        var errmsgprefix = 'Some Problem while ';
+        var aid = '1';        
+    </script>
+</head>
+<body id="dashboard" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed responsive clearfix" data-active="dashboard " data-smooth-scrolling="1">
+
+    <div class="vd_body">
+        <!-- Header Start -->
+        <header class="header-1" id="header">
+            <div class="vd_top-menu-wrapper">
+                <div class="container ">
+                    <div class="vd_top-nav vd_nav-width  ">
+                        <div class="vd_panel-header">
+                            <div class="logo">
+                                <a href="/Admin/dashboard">
+                                    <img alt="Game Snatcherz" title="Game Snatcherz" class="img-responsive" src="images/header-logo.png" width="65">
+                                </a>
+                            </div>
+                            <!-- logo -->
+                            <div class="vd_panel-menu  hidden-sm hidden-xs" data-intro="" data-step="1">
+                                <span class="nav-medium-button menu" data-toggle="tooltip" data-placement="bottom" data-original-title="" data-action="nav-left-medium">
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                                
+                            </div>
+                            <div class="vd_panel-menu left-pos visible-sm visible-xs">
+                                <span class="menu" data-action="toggle-navbar-left">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </span>
+                            </div>
+                            <div class="vd_panel-menu visible-sm visible-xs">
+                                <span class="menu visible-xs" data-action="submenu">
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                                <span class="menu visible-sm visible-xs" data-action="toggle-navbar-right">
+                                    <i class="fa fa-comments"></i>
+                                </span>
+                            </div>
+                            <!-- vd_panel-menu -->
+                        </div>
+                        <!-- vd_panel-header -->
+                    </div>
+                    <div class="vd_container">
+                        <div class="row">
+                            <div class="col-sm-5 col-xs-12">
+                            </div>
+                            <div class="col-sm-7 col-xs-12">
+                                <div class="vd_mega-menu-wrapper">
+                                    <div class="vd_mega-menu pull-right">
+                                        <ul class="mega-ul">
+                                            <li id="top-menu-profile" class="profile mega-li">
+                                                <a href="#" class="mega-link" data-action="click-trigger-close" id="menutr">
+                                                    <span class="mega-name">
+admin                                                            <i class="fa fa-caret-down fa-fw"></i>
+                                                    </span>
+                                                </a>
+                                                <div class="vd_mega-menu-content  width-xs-2  left-xs left-sm" data-action="click-target-close" id="divmenutr">
+                                                    <div class="child-menu">
+                                                        <div class="content-list content-menu">
+                                                            <ul class="list-wrapper pd-lr-10">
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="menu-icon"><i class=" fa fa-user"></i></div>
+                                                                        <div class="menu-text">Edit Profile</div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/Admin/Account/Logout">
+                                                                        <div class="menu-icon"><i class=" fa fa-sign-out"></i></div>
+                                                                        <div class="menu-text">Logout</div>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Head menu search form ends -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+            </div>
+            <!-- vd_primary-menu-wrapper -->
+        </header>
+        <!-- Header Ends -->
+        <div class="content">
+            <div class="container">
+                <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu vd_navbar-left  ">
+                    <div class="navbar-menu clearfix">
+                        <div class="vd_panel-menu hidden-xs">
+                            <span data-original-title="" data-toggle="tooltip" data-placement="bottom" data-action="expand-all" class="menu" data-intro="" data-step="4">
+                                <i class="fa fa-sort-amount-asc"></i>
+                            </span>
+                        </div>
+                        <h3 class="menu-title hide-nav-medium hide-nav-small"></h3>
+                        <div class="vd_menu">
+                            <ul>
+                                <li class="limenudashboard">
+                                    <a href="/Admin/dashboard" class="menunav">
+                                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                                        <span class="menu-text">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="limenurestaurants">
+                                    <a href="#" data-action="click-trigger" class="menunav">
+                                        <span class="menu-icon"><i class="fa fa-building-o"></i></span>
+                                        <span class="menu-text">Coordinater</span>
+                                        <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                                    </a>
+                                    <div class="child-menu divmenunav " data-action="click-target" id="limenurestaurants">
+                                        <ul>
+                                            <li class="">
+                                                <a href="/Admin/View" id="lnkrestaurantsview">
+                                                    <span class="menu-text">View Coordinater</span>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/Admin/Add" id="lnkrestaurantsadd">
+                                                    <span class="menu-text">Add/Edit Coordinater</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="limenunotifications">
+                                    <a href="#" data-action="click-trigger" class="menunav">
+                                        <span class="menu-icon"><i class="fa fa-bell-o"></i></span>
+                                        <span class="menu-text">Notifications</span>
+                                        <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                                    </a>
+                                    <div class="child-menu divmenunav " data-action="click-target" id="limenunotifications">
+                                        <ul>
+                                            <li class="">
+                                                <a href="/Admin/Notifications/View" id="lnknotificationsview">
+                                                    <span class="menu-text">View Notifications</span>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="/Admin/Notifications/Add" id="lnknotificationsadd">
+                                                    <span class="menu-text">Add/Edit Notifications</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                               
+
+
+                                <li class="limenureports">
+                                    <a href="#" data-action="click-trigger" class="menunav">
+                                        <span class="menu-icon"><i class="fa fa-sitemap"></i></span>
+                                        <span class="menu-text">Reports</span>
+                                        <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                                    </a>
+                                    <div class="child-menu divmenunav " data-action="click-target" id="limenureports">
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <!-- Head menu search form ends -->
+                        </div>
+                    </div>
+                    <div class="navbar-spacing clearfix">
+                    </div>
+                    <div class="vd_menu vd_navbar-bottom-widget">
+                        <ul>
+                            <li>
+                                <a href="/Admin/Account/Logout">
+                                    <span class="menu-icon"><i class="fa fa-sign-out"></i></span>
+                                    <span class="menu-text">Logout</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    
+
+<script type="text/javascript" src="http://www.gamesnatcherz.com/Content/js/business.js"></script>
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix"> 
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Coordinater  </li>
+                        <li class="active">Add/Edit</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <div class="row" id="advanced-input">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-md-12">
+						
+						
+						
+						
+						   
+                            <div class="panel widget">
+							<div class="col-md-12">
+                                <div class="panel-heading vd_bg-grey1">
+                                    <h3 class="panel-title"><span class="menu-icon"><i class="fa fa-building-o"></i></span>Add/Edit Coordinater </h3>
+                                </div>
+								
+								
+								
+								<div class="col-md-6">
+                                <div class="panel-body form-horizontal">
+                                      <form action="#" enctype="multipart/form-data" method="post">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">First Name <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter FirstName." id="FirstName" maxlength="50" name="FirstName" placeholder="First Name" type="text" value="" />
+												
+                                            </div>
+										</div>
+                                       
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Email <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-email="Please enter Valid EmailId." data-val-required="Please enter Email." id="Email" maxlength="100" name="Email" placeholder="Email Id" type="text" value="" />
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Select State</label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="hide txtbusinesstypeid" data-val="true" data-val-number="The field BusinessTypeId must be a number." data-val-required="The BusinessTypeId field is required." id="BusinessTypeId" name="BusinessTypeId" type="text" value="0" />
+                                                <select id="BusinessTypeId" class="width-70 width-110 myfilds mytxtfilds ddlbusinesstypeid">
+                                                    <option value="0">-- Select --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+								
+										<div class="form-group">
+                                            <label class="col-sm-4 control-label">Select Town</label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="hide txtbusinesstypeid" data-val="true" data-val-number="The field BusinessTypeId must be a number." data-val-required="The BusinessTypeId field is required." id="BusinessTypeId" name="BusinessTypeId" type="text" value="0" />
+                                                <select id="BusinessTypeId" class="width-70 width-110 myfilds mytxtfilds ddlbusinesstypeid">
+                                                    <option value="0">-- Select --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+					
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Address </label>
+                                            <div class="col-sm-8 controls">
+                                                <textarea class="width-70 width-110 myfilds mytxtfilds" cols="20" data-val="true" data-val-required="Please enter Address." id="Address" maxlength="250" name="Address" placeholder="Address" rows="2">
+</textarea>
+                                                
+                                                <input type="hidden" name="Latitude" id="Latitude" value="0"/>
+                                                <input type="hidden" name="Longitude" id="Longitude" value="0" />
+                                            </div>
+                                        </div>
+                         
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Status <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <select class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-number="The field IsActive must be a number." data-val-required="The IsActive field is required." id="IsActive" name="IsActive"><option value="1">Active</option>
+<option selected="selected" value="0">Inactive</option>
+</select>
+                                            </div>
+                                        </div>
+                                        
+</form>                                </div>
+                                        </div>
+
+                                    
+									
+											<div class="col-md-6">
+                                <div class="panel-body form-horizontal">
+                                      <form action="#" enctype="multipart/form-data" method="post">
+                                       
+                                        <div class="form-group cvb">
+                                            <label class="col-sm-4 control-label">Last Name <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter LastName." id="LastName" maxlength="50" name="LastName" placeholder="Last Name" type="text" value="" />
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Mobile <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter Mobile." id="Mobile" maxlength="15" name="Mobile" placeholder="Mobile Number" type="text" value="" />
+                                            </div>
+                                        </div>
+                                 
+										<div class="form-group">
+                                            <label class="col-sm-4 control-label">Select Region</label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="hide txtbusinesstypeid" data-val="true" data-val-number="The field BusinessTypeId must be a number." data-val-required="The BusinessTypeId field is required." id="BusinessTypeId" name="BusinessTypeId" type="text" value="0" />
+                                                <select id="BusinessTypeId" class="width-70 width-110 myfilds mytxtfilds ddlbusinesstypeid">
+                                                    <option value="0">-- Select --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+					
+                                          <div class="form-group">
+                                            <label class="col-sm-4 control-label">ZipCode <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter zipcode." id="ZipCode" maxlength="50" name="ZipCode" placeholder="ZipCode" type="text" value="" />
+                                            </div>
+                                        </div>
+                                   
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">UserName <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter Username." id="UserName" maxlength="20" name="UserName" placeholder="Username" type="text" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Password <span class="vd_red">*</span></label>
+                                            <div class="col-sm-8 controls">
+                                                <input class="width-70 width-110 myfilds mytxtfilds" data-val="true" data-val-required="Please enter Password." id="Password" maxlength="20" name="Password" placeholder="Password" type="text" value="" />
+                                            </div>
+                                        </div>
+                                    
+                                       
+</form>                                </div>
+                                        </div>
+
+
+<div class="col-md-12 text-center">
+							 <div class="form-group form-actions">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-9">
+                                                <button class="btn vd_btn vd_bg-green vd_white" type="submit"><i class="icon-ok"></i>Save</button>
+                                                <a class="btn btn-danger" href="/Admin/View">Cancel</a>
+                                            </div>
+                                        </div>
+							
+							</div>
+
+
+
+
+
+
+                            </div>
+							
+							
+							<br>
+							
+							
+							</div>
+							
+							
+							 
+							
+							
+							
+							
+                        </div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+                    </div>
+					
+					
+					
+					
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon">
+    <span id="place-name" class="title"></span><br>
+    <span id="place-address"></span>
+    </div>
+
+    <script type="text/javascript" src="http://www.gamesnatcherz.com/Content/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="http://www.gamesnatcherz.com/Content/js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="http://www.gamesnatcherz.com/Content/js/inputmask.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.34&sensor=false&key=AIzaSyDVvZBCNufzytLMhwIpFZ09JHrK0o4UMDo&libraries=places"></script>
+    
+<script>
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    jQuery(window).ready(function () {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -33.8688, lng: 151.2195 },
+            zoom: 13
+        });
+        //var card = document.getElementById('pac-card');
+        var input = document.getElementById('Address');
+        //var types = document.getElementById('type-selector');
+        //var strictBounds = document.getElementById('strict-bounds-selector');
+
+        //map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Bind the map's bounds (viewport) property to the autocomplete object,
+        // so that the autocomplete requests use the current map bounds for the
+        // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29)
+        });
+
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+            $('#Latitude').val(lat);
+            $('#Longitude').val(lng);
+            //infowindow.close();
+            //marker.setVisible(false);
+            //var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
+
+            // If the place has a geometry, then present it on a map.
+            //if (place.geometry.viewport) {
+            //    map.fitBounds(place.geometry.viewport);
+            //} else {
+            //    map.setCenter(place.geometry.location);
+            //    map.setZoom(17);  // Why 17? Because it looks good.
+            //}
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                  (place.address_components[0] && place.address_components[0].short_name || ''),
+                  (place.address_components[1] && place.address_components[1].short_name || ''),
+                  (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+
+            infowindowContent.children['place-icon'].src = place.icon;
+            infowindowContent.children['place-name'].textContent = place.name;
+            infowindowContent.children['place-address'].textContent = address;
+            infowindow.open(map, marker);
+        });
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        //function setupClickListener(id, types) {
+        //    var radioButton = document.getElementById(id);
+        //    radioButton.addEventListener('click', function () {
+        //        autocomplete.setTypes(types);
+        //    });
+        //}
+
+        //setupClickListener('changetype-all', []);
+        //setupClickListener('changetype-address', ['address']);
+        //setupClickListener('changetype-establishment', ['establishment']);
+        //setupClickListener('changetype-geocode', ['geocode']);
+
+        //document.getElementById('use-strict-bounds')
+        //    .addEventListener('click', function () {
+        //        console.log('Checkbox clicked! New state=' + this.checked);
+        //        autocomplete.setOptions({ strictBounds: this.checked });
+        //    });
+    });
+</script>
+ 
+
+
+                </div>
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- Footer Start -->
+        <footer class="footer-1" id="footer">
+            <div class="vd_bottom ">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-xs-12">
+                            <div class="copyright">
+                                Copyright &copy;2020 Game Snatcherz. All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+        </footer>
+        <!-- Footer END -->
+    </div>
+    <!-- .vd_body END  -->
+    <a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"><i class="fa  fa-angle-up"></i></a>
+
+
+</body>
+
+</html>

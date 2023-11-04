@@ -1,0 +1,38 @@
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\DbFactory.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Dapper.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\MySql.Data.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.csprojResolveAssemblyReference.cache
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.csprojResolveAssemblyReference.cache
+D:\Charles\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\DbFactory.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Dapper.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\MySql.Data.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.pdb
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.BAL.pdb
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\DbFactory.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Dapper.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\MySql.Data.dll
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.DAL.pdb
+D:\Projects\Lifeline\Lifeline.BAL\bin\Debug\Lifeline.Entity.pdb
+D:\Projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.csproj.AssemblyReference.cache
+D:\Projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.csproj.CoreCompileInputs.cache
+D:\Projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.csproj.CopyComplete
+D:\Projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.dll
+D:\Projects\Lifeline\Lifeline.BAL\obj\Debug\Lifeline.BAL.pdb

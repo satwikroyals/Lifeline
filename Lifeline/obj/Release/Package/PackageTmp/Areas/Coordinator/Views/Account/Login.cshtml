@@ -1,0 +1,134 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using Lifeline.Code
+
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8" />
+    <title>Lifeline </title>
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Globalsettings.appimagespath("favicon.ico")">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="@Globalsettings.appcsspath("theme.min.css")" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="@Globalsettings.appcsspath("font-awesome-ie7.min.css")">
+    <link href="@Globalsettings.appimagespath("ie.css")" rel="stylesheet">
+
+
+</head>
+
+<body id="pages" class="full-layout no-nav-left no-nav-right  nav-top-fixed background-login responsive remove-navbar login-layout clearfix" data-active="pages " data-smooth-scrolling="1" style="background-image: url('@Globalsettings.appimagespath("loginbg.jpg")') !important; padding: 0px 0px 100px 0px !important; background-size: cover;">
+    <div class="vd_body">
+        <div class="content">
+            <div class="container">
+                <!-- Middle Content Start -->
+                <div class="vd_content-wrapper">
+                    <div class="vd_container">
+                        <div class="vd_content clearfix">
+                            <div class="vd_content-sections clearfix" style="padding: 0px;">
+                                <div class="vd_login-page">
+                                    <div class="heading clearfix">
+                                        <div class="logo">
+
+                                            <img src="@Globalsettings.appimagespath("header-logo.png")" class="logoimg" />
+                                        </div>
+                                        <h4 class="text-center font-semibold vd_grey" style="color:#fff !important;"> LOGIN</h4>
+                                    </div>
+                                    <div class="panel widget">
+                                        <div class="clear-fix"></div>
+                                        <div class="panel-body" style="padding: 0px;">
+                                            <div class="col-lg-12 mybordr" style="padding: 0px;">
+                                                <div class="col-xs-3" style="background-color: #6bba48; height: 5px;"></div>
+                                                <div class="col-xs-3" style="background-color: #34DBCF; height: 5px;"></div>
+                                                <div class="col-xs-3" style="background-color: #ff5a00; height: 5px;"></div>
+                                                <div class="col-xs-3" style="background-color: #f00; height: 5px;"></div>
+                                            </div>
+
+                                            <div class="login-icon entypo-icon">
+                                                <i class="fa fa-lock"></i>
+                                            </div>
+                                            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                                            {
+                                                @Html.ValidationSummary(false, "", new { @class = "alert alert-danger err" })
+                                                <div class="validation-summary-valid alert alert-danger err" data-valmsg-summary="true">
+                                                    <ul>
+                                                        <li style="display:none"></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group  mgbt-xs-20">
+                                                        <div class="col-md-12 mymargin">
+                                                            <div class="vd_input-wrapper paswrd" id="userid-input-wrapper">
+                                                                <span class="menu-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+
+                                                                <input autocomplete="off" class="required" id="UserName" name="UserName" placeholder="Username" type="text" value="" />
+                                                            </div>
+                                                            <!-- <span class="errormsg">Please Enter User id</span> -->
+                                                        </div>
+                                                        <div class="col-md-12 mymargin">
+                                                            <div class="vd_input-wrapper paswrd" id="password-input-wrapper">
+                                                                <span class="menu-icon"><i class="fa fa-lock"></i></span>
+                                                                <input autocomplete="off" class="required" id="Password" name="Password" placeholder="Password" type="password" value="" />
+
+                                                            </div>
+                                                            <!-- <span class="errormsg">Please Enter Your password</span> -->
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 text-center mgbt-xs-5">
+                                                            <button class="btn vd_bg-green vd_white width-100 loginbtn" type="submit" id="login-submit">Login</button>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <!-- Panel Widget -->
+                                </div>
+                                <!-- vd_login-page -->
+                            </div>
+                            <!-- .vd_content-section -->
+                        </div>
+                        <!-- .vd_content -->
+                    </div>
+                    <!-- .vd_container -->
+                </div>
+                <!-- Middle Content End -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .content -->
+        <!-- Footer Start -->
+        <footer class="footer-2" id="footer">
+            <div class="vd_bottom ">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-xs-12">
+                            <div class="copyright text-center" style="margin-top: 5px;">
+                                Copyright &#169;2021 LifenLine. All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </div>
+    <!--Javascirpt files reqiured for website-->
+
+
+</body>
+
+
+</html>
+

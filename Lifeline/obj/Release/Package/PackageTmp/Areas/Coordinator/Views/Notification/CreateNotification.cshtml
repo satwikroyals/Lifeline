@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "CreateNotification";
+    Layout = "~/Areas/Coordinator/Views/Shared/CoordiLayout.cshtml";
+}
+
+@using Lifeline.Entity;
+@using Lifeline.Code;
+@model Lifeline.Entity.NotificationEntity
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Notifications </li>
+                        <li class="active">Add</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <div class="row" id="advanced-input">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-md-12">
+                            <div class="panel widget">
+                                <div class="panel-heading vd_bg-grey1">
+                                    <h3 class="panel-title"><span class="menu-icon"><i class="fa fa-bell-o"></i></span>Add Notifications </h3>
+                                </div>
+                                <div class="panel-body form-horizontal">
+                                    @using (Html.BeginForm("Add", "Notification", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.TextBoxFor(m => m.NotificationId, null, new { @class = "hide" })
+                                        <input type="hidden" name="CoordinatorId" id="CoordinatorId" value="@Request.Cookies["_lifecoordi"]["mid"]" />
+                                        @*@Html.AntiForgeryToken();*@
+                                        @Html.ValidationSummary(false, "", new { @class = "alert alert-danger err" })
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Title <span class="vd_red">*</span></label>
+                                            <div class="col-sm-5 controls">
+                                                @Html.TextBoxFor(m => m.Title, htmlAttributes: new { @class = "width-70 width-110 myfilds mytxtfilds", maxlength = "450", placeholder = "Title", id = "Title" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Message<span class="vd_red">*</span></label>
+                                            <div class="col-sm-5 controls">
+                                                @Html.TextArea("Message", null, htmlAttributes: new { @class = "width-70 width-110 myfilds mytxtfilds", maxlength = "3500", placeholder = "Notification Text", id = "Message" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Status <span class="vd_red">*</span></label>
+                                            <div class="col-sm-5 controls">
+                                                @Html.DropDownList("IsActive", new List<SelectListItem>() { new SelectListItem { Text = "Active", Value = "1" }, new SelectListItem { Text = "Inactive", Value = "0" } }, htmlAttributes: new { @class = "width-70 width-110 myfilds mytxtfilds" })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 tbbg2 pagecontent grid-pi history">
+                                            <div class="col-lg-12 hide nodata dataerr" id="norec">
+                                                No Customers Found.
+                                            </div>
+                                            <div id="tblgrid">
+                                                <div class="col-lg-12 grid-i">
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                            Total Customers : <span id="totalrec">0</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                            Page Size :
+                                                            <select name="ddlpagesize" id="ddlpagesize" class="form-control ps">
+                                                                <option>25</option>
+                                                                <option>50</option>
+                                                                <option>75</option>
+                                                                <option>100</option>
+                                                                <option>200</option>
+                                                                <option>300</option>
+                                                                <option>400</option>
+                                                                <option>500</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 text-right">
+                                                        <div class="form-group" id="showpageinfo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 text-right">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+
+                                                <div class="tblcontent">
+                                                    <div class="table-responsive">
+                                                        <table id="tbldataabs" class="mytbl table display dttbl table-striped table-hover">
+                                                            <thead class="oc-thead">
+                                                                <tr>
+                                                                    <th class="col-lg-2"><input class='chkbox' id="selectAll" type='checkbox'></th>
+                                                                    <th class="col-lg-2">Name</th>
+                                                                    <th class="col-lg-4">Mobile</th>
+                                                                    <th class="col-lg-2">Email</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="oc-tbody" id="tbldata">
+                                                          
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="px-2 my-2 pull-right">
+                                                        <ul class="pagination m-0">
+                                                            <li class="active"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li><a href="#">3</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <button class="btn vd_btn vd_bg-green vd_white" type="submit" style="margin-right:20px"><i class=" icon-ok"></i>Send</button>
+                                            @Html.ActionLink("Cancel", "View", new { controller = "Notifications" }, new { @class = "btn btn-danger" })
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section pagescripts {
+<script>
+    $(document).ready(function () {
+        getmemberspage();
+        //var customerids = "";
+        //var customerid = customerids.split(',');
+        //if (customerid != null) {
+        //    $.each(customerid, function (id, item) {
+        //        //console.log(item);
+        //        $("#chkid_" + item).prop("checked", "checked");
+        //    });
+        //}
+    });
+    $('#selectAll').click(function (e) {
+        $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+    });
+
+    function getmemberspage() {
+
+        GetMembers(1, 10, 1, '');
+        $(document).on("change", '#volunteer', function (event) {
+            GetMembers(1, 10, 1, '');
+        });
+        $(document).on('click', '#shwbtn', function () {
+            GetMembers(1, 10, 1, '');
+        });
+        $(document).on('click', '#shwallbtn', function () {
+            $('#StartDate').val("");
+            $('#EndDate').val("");
+            $('#Searchstr').val("");
+            GetMembers(1, 10, 1, '');
+
+        });
+        $(document).on('click', '#srchbtn', function () {
+            GetMembers(1, 10, 1, '');
+
+        });
+        $(document).on("click", ".d-paging", function (event) {
+
+            var pagesize = $('#ddlpagesize').val();
+            var pageindex = $(this).attr('_id');
+            var sortby = 1; //$('#SortBy').val();
+            var searchby = $('#Searchstr').val();
+            GetMembers(pageindex, pagesize, sortby, searchby);
+        });
+        $(document).on("change", '#ddlpagesize', function (event) {
+
+            var pagesize = $('#ddlpagesize').val();
+            var pageindex = 1;
+            var sortby = 1; //$('#SortBy').val();
+            var searchby = $('#Searchstr').val();
+            GetMembers(pageindex, pagesize, sortby, searchby);
+        });
+        $(document).on("keyup", '#Searchstr', function (event) {
+            var pagesize = 10;// $('#ddlPageSize').val();
+            var pageindex = 1;
+            var sortby = 1; //$('#SortBy').val();
+            var searchby = $('#Searchstr').val();
+            GetMembers(pageindex, pagesize, sortby, searchby);
+            $('#Searchstr').focus();
+            var $thisVal = $('#Searchstr').val();
+            $('#Searchstr').val('').val($thisVal);
+
+        });
+    }
+    //<td><button class='times-bg' onclick='DeleteEvent(" + item.MemberId + ")'><i class='fas fa-times'></i></button></td>
+    function GetMembers(pageindex, pagesize, sortby, searchby) {
+        //  $('.pageloader').removeClass("hide");
+        //alert('dfr');
+        var searchby = $('#Searchstr').val();
+        var lid = $("#CoordinatorId").val();
+        var volunteer = $("#volunteer").val();
+        var row = '';
+        var reccount = 0;
+        var isloader = String(searchby).length == 0 ? true : false
+        gl.ajaxreqloader(apiurl + "GetAdminMembers", "get", { lid: lid, volunteer: 0, pgindex: pageindex, pgsize: pagesize, sortby: sortby, str: searchby }, function (response) {
+            if (response.length > 0) {
+                reccount = response[0].TotalRecords;
+                $.each(response, function (i, item) {
+                    row += "<tr><td><input class='chkbox' id='chkid_" + item.MemberId + "' name='CustomerId' value='" + item.MemberId + "'  type='checkbox'></td><td>" + item.FirstName + " " + item.LastName + "</td><td>" + item.Mobile + "</td><td>" + item.EmailId + "</td></tr>";
+                });
+                $("#tbldata").html(row);
+                $('#norec').addClass('hide');
+                $('#tblgrid').removeClass('hide');
+                setPagging(reccount, pageindex, pagesize);
+            }
+            else {
+                $('#norec').removeClass('hide');
+                $('#tblgrid').addClass('hide');
+            }
+        }, '', '', '', '', true, true, '.loader', '.tblcontent', 'text json', 'true');
+    }
+</script>
+    }
+
+

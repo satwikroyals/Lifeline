@@ -1,0 +1,309 @@
+﻿@{
+    ViewBag.Title = "Locations";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Code
+@model Lifeline.Entity.MemberEntity
+           <style>
+               .clearfix {
+                   padding-bottom: 20px;
+               }
+           </style>
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Locations  </li>
+                        <li class="active">Add</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <div class="row" id="advanced-input">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-md-12">
+                            <div class="panel widget">
+                                <div class="col-md-12">
+                                    <div class="panel-heading vd_bg-grey1">
+                                        <h3 class="panel-title"><span class="menu-icon"><i class="fa fa-building-o"></i></span>Add Locations </h3>
+                                    </div>
+                                    <div class="alert alert-danger vsdiv-full bo-l-0 bo-r-0 bo-rad-0 clearfix @(Html.ViewData.ModelState.IsValid?"hide":"show")" id="error" tabindex='1'>
+                                        <span>Errors List</span>
+                                        @Html.ValidationSummary()
+                                    </div>
+
+                                    @*<div class="form-group">
+                                        <label class="col-sm-4 control-label">Select Country</label>
+                                        <div class="col-sm-8 controls">
+                                            <select class="width-70 width-110 myfilds mytxtfilds" onchange="GetStateddl()" id="CountryId" name="CountryId" bindval="0">
+                                                <option value="0">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">State <span class="vd_red">*</span></label>
+                                        <div class="col-sm-8 controls">
+                                            <input class="width-70 width-110 myfilds mytxtfilds isvalidate" errormsg="Enter First Name" data-val="true" data-val-required="Please enter FirstName." id="StateName" maxlength="50" name="StateName" placeholder="State Name" type="text" value="" />
+                                        </div>
+                                    </div>*@
+
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                        <select class="form-control main-input isvalidate" name="CountryId" id="CountryId" errormsg="Select country" onchange="GetStateddl()" default="0" bindval="0">
+                                            <option value="0">Select Country</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                        <input class="form-control main-input isvalidate" errormsg="Enter StateName" id="StateName" name="StateName" placeholder="State Name" value="">
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn vd_btn vd_bg-green vd_white" id="subbtn" onclick="AddState()">Add State</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                        <select class="form-control main-input" id="StateId" name="StateId" onchange="GetRegionddl()" errormsg="Select State" default="0" bindval="0">
+                                            <option value="0">Select State</option>
+                                        </select>
+                                        @*<i class="fas fa-caret-down"></i>*@
+                                    </div>
+
+                                    <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                        <input class="form-control main-input isvalidate" errormsg="Enter Region" id="Region" name="Region" placeholder="Region" value="">
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn vd_btn vd_bg-green vd_white" id="subbtn" onclick="AddRegion()">Add Region</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                        <select class="form-control main-input" name="" id="RegionId" errormsg="Select Region" onchange="GetTownddl()" default="0" bindval="0">
+                                            <option value="0">Select Region</option>
+                                        </select>
+                                        @*<i class="fas fa-caret-down"></i>*@
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                        <input class="form-control main-input isvalidate" errormsg="Enter Town" id="Town" name="Town" placeholder="Town" value="">
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn vd_btn vd_bg-green vd_white" id="subbtn" onclick="AddTown()">Add Town</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-6 col-sm-2 my-2 px-2">
+                                        <select class="form-control main-input" id="TownId" name="TownId" errormsg="Select Town" default="0" bindval="0">
+                                            <option value="0">Select Town</option>
+                                        </select>
+                                        @*<i class="fas fa-caret-down"></i>*@
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 my-2 px-2">
+                                        <input class="form-control main-input isvalidate" errormsg="Enter Location" id="Location" name="Location" placeholder="Location" value="">
+                                        <input type="hidden" name="Latitude" id="Latitude" value="0" />
+                                        <input type="hidden" name="Longitude" id="Longitude" value="0" />
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn vd_btn vd_bg-green vd_white" id="subbtn" onclick="AddLocation()">Add Location</button>
+                                    </div>
+                              
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon">
+    <span id="place-name" class="title"></span><br>
+    <span id="place-address"></span>
+</div>
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("coordinator.js")"></script>
+    <script type="text/javascript" src="@Url.Content(Globalsettings.appjspath("jquery.validate.min.js"))"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.34&sensor=false&key=@Globalsettings.GetGoogleMapsApiKey()&libraries=places"></script>
+    <script>
+        $(document).ready(function () {
+            GetCountryddl();
+            GetStateddl();
+            GetRegionddl();
+            GetTownddl();
+            GetLocationddl();
+        });
+        function AddState() {
+            var countryid = $("#CountryId").val();
+            var State = $("#StateName").val();
+            if (countryid == 0) {
+                alert('select Country.');
+                return;
+            }
+            else if (State == "") {
+                alert('Enter StateName.');
+                return;
+            } else {
+                gl.ajaxreq(Websiteapiurl + 'AddState', 'get', { countryid: countryid, State: State }, function (response) {
+                    $("input:text").val("");
+                    alert(response.StatusMessage);
+                }, '', '', '', '', false, false);
+            }
+        };
+        function AddRegion() {
+            var stateid = $("#StateId").val();
+            var region = $("#Region").val();
+            if (stateid == 0) {
+                alert('select State.');
+                return;
+            }
+            else if (region == "") {
+                alert('Enter Region.');
+                return;
+            } else {
+                gl.ajaxreq(Websiteapiurl + 'AddRegion', 'get', { stateid: stateid, region: region }, function (response) {
+                    $("input:text").val("");
+                    alert(response.StatusMessage);
+                }, '', '', '', '', false, false);
+            }
+        };
+        function AddTown() {
+            var regionid = $("#RegionId").val();
+            var town = $("#Town").val();
+            if (regionid == 0) {
+                alert('select Region.');
+                return;
+            }
+            else if (town == "") {
+                alert('Enter Town.');
+                return;
+            } else {
+                gl.ajaxreq(Websiteapiurl + 'AddTown', 'get', { regionid: regionid, town: town }, function (response) {
+                    $("input:text").val("");
+                    alert(response.StatusMessage);
+                }, '', '', '', '', false, false);
+            }
+        };
+        function AddLocation() {
+            var townid = $("#TownId").val();
+            var location = $("#Location").val();
+            var lat = $('#Latitude').val();
+            var lang = $('#Longitude').val();
+            if (townid == 0) {
+                alert('select Town.');
+                return;
+            }
+            else if (location == "") {
+                alert('Enter location.');
+                return;
+            } else {
+                gl.ajaxreq(Websiteapiurl + 'AddLocation', 'get', { townid: townid, location: location, lat: lat, lang: lang }, function (response) {
+                    $("input:text").val("");
+                    alert(response.StatusMessage);
+                }, '', '', '', '', false, false);
+            }
+        };
+    </script>
+<script>
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    jQuery(window).ready(function () {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -33.8688, lng: 151.2195 },
+            zoom: 13
+        });
+        //var card = document.getElementById('pac-card');
+        var input = document.getElementById('Location');
+        //var types = document.getElementById('type-selector');
+        //var strictBounds = document.getElementById('strict-bounds-selector');
+
+        //map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Bind the map's bounds (viewport) property to the autocomplete object,
+        // so that the autocomplete requests use the current map bounds for the
+        // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29)
+        });
+
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+            $('#Latitude').val(lat);
+            $('#Longitude').val(lng);
+            //infowindow.close();
+            //marker.setVisible(false);
+            //var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
+
+            // If the place has a geometry, then present it on a map.
+            //if (place.geometry.viewport) {
+            //    map.fitBounds(place.geometry.viewport);
+            //} else {
+            //    map.setCenter(place.geometry.location);
+            //    map.setZoom(17);  // Why 17? Because it looks good.
+            //}
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                  (place.address_components[0] && place.address_components[0].short_name || ''),
+                  (place.address_components[1] && place.address_components[1].short_name || ''),
+                  (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+
+            infowindowContent.children['place-icon'].src = place.icon;
+            infowindowContent.children['place-name'].textContent = place.name;
+            infowindowContent.children['place-address'].textContent = address;
+            infowindow.open(map, marker);
+        });
+    });
+</script>
+
+}
+
+
+
+
+
+
+
+
+
+

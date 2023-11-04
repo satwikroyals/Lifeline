@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "Neighbourhood";
+    Layout = "~/Areas/Coordinator/Views/Shared/CoordiLayout.cshtml";
+}
+
+@using Lifeline.Code
+@model Lifeline.Entity.MemberEntity
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Neighbourhood  </li>
+                        <li class="active">Add/Edit</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <div class="row" id="advanced-input">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row" id="auto-complete-input">
+                        <div class="col-md-12">
+                            <div class="panel widget">
+                                    <div class="panel-heading vd_bg-grey1">
+                                        <h3 class="panel-title"><span class="menu-icon"><i class="fa fa-building-o"></i></span>Add/Edit Neighbourhood </h3>
+                                    </div>
+                                 
+                                
+                                        <div class="col-md-6">
+                                            <div class="panel-body form-horizontal">
+                                                <div class="form-group">
+                                                    <h3 class="alert alert-danger" style="background-color:transparent">Coming Soon... </h3>
+                                                  
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        
+                                  
+                                    
+                                </div>
+                                <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon">
+    <span id="place-name" class="title"></span><br>
+    <span id="place-address"></span>
+</div>
+
+@section pagescripts {
+    <script src="@Globalsettings.appjspath("volunteers.js")"></script>
+    <script type="text/javascript" src="@Url.Content(Globalsettings.appjspath("jquery.validate.min.js"))"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.34&sensor=false&key=@Globalsettings.GetGoogleMapsApiKey()&libraries=places"></script>
+    <script>
+        $(document).ready(function () {
+            GetCountryddl();
+            GetLocationddl();
+            $('.staticddl').each(function () {
+                $(this).val($(this).attr('bindvalue'));
+            });
+        });
+    </script>
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        jQuery(window).ready(function () {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -33.8688, lng: 151.2195 },
+                zoom: 13
+            });
+            //var card = document.getElementById('pac-card');
+            var input = document.getElementById('GeoAddress');
+            //var types = document.getElementById('type-selector');
+            //var strictBounds = document.getElementById('strict-bounds-selector');
+
+            //map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Bind the map's bounds (viewport) property to the autocomplete object,
+            // so that the autocomplete requests use the current map bounds for the
+            // bounds option in the request.
+            autocomplete.bindTo('bounds', map);
+
+            // Set the data fields to return when the user selects a place.
+            autocomplete.setFields(
+                ['address_components', 'geometry', 'icon', 'name']);
+
+            var infowindow = new google.maps.InfoWindow();
+            var infowindowContent = document.getElementById('infowindow-content');
+            infowindow.setContent(infowindowContent);
+            var marker = new google.maps.Marker({
+                map: map,
+                anchorPoint: new google.maps.Point(0, -29)
+            });
+
+            autocomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+                var lat = place.geometry.location.lat();
+                var lng = place.geometry.location.lng();
+                $('#Latitude').val(lat);
+                $('#Longitude').val(lng);
+                //infowindow.close();
+                //marker.setVisible(false);
+                //var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    // User entered the name of a Place that was not suggested and
+                    // pressed the Enter key, or the Place Details request failed.
+                    window.alert("No details available for input: '" + place.name + "'");
+                    return;
+                }
+
+                // If the place has a geometry, then present it on a map.
+                //if (place.geometry.viewport) {
+                //    map.fitBounds(place.geometry.viewport);
+                //} else {
+                //    map.setCenter(place.geometry.location);
+                //    map.setZoom(17);  // Why 17? Because it looks good.
+                //}
+                marker.setPosition(place.geometry.location);
+                marker.setVisible(true);
+
+                var address = '';
+                if (place.address_components) {
+                    address = [
+                      (place.address_components[0] && place.address_components[0].short_name || ''),
+                      (place.address_components[1] && place.address_components[1].short_name || ''),
+                      (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                }
+
+                infowindowContent.children['place-icon'].src = place.icon;
+                infowindowContent.children['place-name'].textContent = place.name;
+                infowindowContent.children['place-address'].textContent = address;
+                infowindow.open(map, marker);
+            });
+
+            // Sets a listener on a radio button to change the filter type on Places
+            // Autocomplete.
+            //function setupClickListener(id, types) {
+            //    var radioButton = document.getElementById(id);
+            //    radioButton.addEventListener('click', function () {
+            //        autocomplete.setTypes(types);
+            //    });
+            //}
+
+            //setupClickListener('changetype-all', []);
+            //setupClickListener('changetype-address', ['address']);
+            //setupClickListener('changetype-establishment', ['establishment']);
+            //setupClickListener('changetype-geocode', ['geocode']);
+
+            //document.getElementById('use-strict-bounds')
+            //    .addEventListener('click', function () {
+            //        console.log('Checkbox clicked! New state=' + this.checked);
+            //        autocomplete.setOptions({ strictBounds: this.checked });
+            //    });
+        });
+    </script>
+}
+
+
+
+

@@ -1,0 +1,24 @@
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.BAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.BAL.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.DAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.Entity.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\DbFactory.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Dapper.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\MySql.Data.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.DAL.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\bin\Release\Lifeline.Entity.pdb
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.csprojResolveAssemblyReference.cache
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.dll
+D:\Kansolve projects\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.BAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.BAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.DAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.Entity.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\DbFactory.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Dapper.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\MySql.Data.dll
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.DAL.pdb
+D:\Charles\Lifeline\Lifeline.BAL\bin\Release\Lifeline.Entity.pdb
+D:\Charles\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.csprojResolveAssemblyReference.cache
+D:\Charles\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.dll
+D:\Charles\Lifeline\Lifeline.BAL\obj\Release\Lifeline.BAL.pdb

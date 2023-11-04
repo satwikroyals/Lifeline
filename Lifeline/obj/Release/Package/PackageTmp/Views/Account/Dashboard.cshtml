@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using Lifeline.Code
+@*@model Lifeline.Entity.MemberEntity*@
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header mylinks">
+                    <ul class="breadcrumb">
+                        <li>Home </li>
+                        <li class="active">Dashboard</li>
+                    </ul>
+                    <div class="vd_panel-menu hidden-sm hidden-xs resize-content" data-intro="" data-step="5" data-position="left">
+                        <div data-action="remove-navbar" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-navbar-button menu"><i class="fa fa-arrows-h"></i></div>
+                        <div data-action="remove-header" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="remove-header-button menu"><i class="fa fa-arrows-v"></i></div>
+                        <div data-action="fullscreen" data-original-title="" data-toggle="tooltip" data-placement="bottom" class="fullscreen-button menu"><i class="glyphicon glyphicon-fullscreen"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vd_content-section clearfix subdiv">
+                <div class="col-lg-12 ">
+                    <main class="page-content">
+                        <div class="container-fluid px-5">
+                            <div class="page-wrapper">
+                                <!-- ===== Page-Container ===== -->
+                                <div class="container-fluid">
+                                    <div class="row colorbox-group-widget">
+
+                                        <div class="col-md-4 col-sm-6 info-color-box">
+                                            <a href="@Url.Action("Customers", "Report")" class="dashbtn">
+                                                <div class="white-box">
+                                                    <div class="media bg-primary">
+                                                        <div class="media-body">
+                                                            <h3 class="info-count">0<span class="pull-right"><i class="fa fa-users" aria-hidden="true"></i></span></h3>
+                                                            <p class="info-text font-12">Members</p>
+                                                            <p class="info-ot font-15">Active<span class="label label-rounded">0</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6 info-color-box">
+                                            <a href="@Url.Action("View", "SwipeandWin")" class="dashbtn">
+                                                <div class="white-box">
+                                                    <div class="media bg-success">
+                                                        <div class="media-body">
+                                                            <h3 class="info-count">0<span class="pull-right"><i class="fa fa-gamepad" aria-hidden="true"></i></span></h3>
+                                                            <p class="info-text font-12">Volunteers</p>
+                                                            <p class="info-ot font-15">Active<span class="label label-rounded">0</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ===== Page-Container-End ===== -->
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-primary {
+        background-color: #0283cc !important;
+        color: #fff;
+    }
+
+    /*.media-body {
+        display: table-cell;
+        vertical-align: top;
+    }*/
+
+    .colorbox-group-widget .info-color-box .media .info-count {
+        font-size: 30px;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    .pull-right {
+        float: right !important;
+    }
+
+    .colorbox-group-widget .info-color-box .media .info-text {
+        text-transform: uppercase;
+    }
+
+    .font-12 {
+        font-size: 12px !important;
+    }
+
+    .font-15 {
+        font-size: 15px !important;
+    }
+
+    .info-ot .label {
+        margin-left: 5px;
+        font-size: 14px;
+        background-color: rgba(0,0,0,.2);
+        border-radius: 4px;
+        padding: 0 4px;
+        min-width: 35px;
+        height: 20px;
+        font-weight: 600;
+    }
+
+    p.info-ot.font-15 {
+        float: right;
+    }
+
+    .media.bg-primary {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .media.bg-success {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .bg-success {
+        background-color: #2ecc71 !important;
+        color: #fff;
+    }
+
+    .media.bg-danger {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .bg-danger {
+        background-color: #e74a25 !important;
+        color: #fff;
+    }
+
+    .bg-warning {
+        background-color: #ffb136 !important;
+        color: #fff;
+    }
+
+    .media.bg-warning {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .cxv {
+        position: relative;
+        width: 100%;
+        top: 30px;
+        margin: 22px 25px 47px 0px;
+    }
+
+    .media.bg-warning2 {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .bg-warning2 {
+        background-color: #8336ff !important;
+        color: #fff;
+    }
+
+
+    .media.bg-warning3 {
+        padding: 5px 15px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .bg-warning3 {
+        background-color: #ff3680 !important;
+        color: #fff;
+    }
+</style>
+
+
+
+
